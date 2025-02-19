@@ -1,0 +1,93 @@
+<nav class="navbar shadow-sm fixed-top bg-white">
+  <style>
+      .navbar {
+          padding: 0.1rem 1rem;
+          transition: all 0.3s ease;
+      }
+
+      .navbar.scrolled {
+          padding: 0.5rem 2rem;
+          box-shadow: 0 5px 20px rgba(0,0,0,0.1) !important;
+      }
+
+      .navbar-brand {
+          font-weight: 700;
+          font-size: 1.5rem;
+          color: #1e3c72;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+      }
+
+      .navbar-brand img {
+          transition: transform 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+          transform: rotate(360deg);
+      }
+
+      .nav-link {
+          color: #1e3c72 !important;
+          font-weight: 500;
+          position: relative;
+          padding: 0.5rem 1rem !important;
+          margin: 0 0.2rem;
+      }
+
+      .nav-link::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 0;
+          height: 2px;
+          background: linear-gradient(90deg, #1e3c72, #2a5298);
+          transition: all 0.3s ease;
+          transform: translateX(-50%);
+      }
+
+      .nav-link:hover::after {
+          width: 100%;
+      }
+
+      .nav-link.active {
+          color: #2a5298 !important;
+          font-weight: 700;
+      }
+
+      .nav-link.active::after {
+          width: 100%;
+      }
+  </style>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <img src="/static/logo.png" alt="" width="70" height="70" class="d-inline-block align-text-top">
+      Wonton
+    </a>
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/courses">Courses</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/events">Events</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div style="height:56px"></div>
+<script>
+  window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+          document.querySelector('.navbar').classList.add('scrolled');
+      } else {
+          document.querySelector('.navbar').classList.remove('scrolled');
+      }
+  });
+</script>

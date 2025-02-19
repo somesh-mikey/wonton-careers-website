@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Wonton Careers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* Modern styling for Events Page */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #fff;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("{{ url_for('static', filename='pattern.png') }}") repeat;
+            opacity: 0.1;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        header p {
+            margin: 1rem 0 0;
+            font-size: 1.4rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .event {
+            background: #fff;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 5px;
+            background: linear-gradient(to bottom, #1e3c72, #2a5298);
+        }
+
+        .event:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .event img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            margin-right: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .event:hover img {
+            transform: scale(1.05);
+        }
+
+        .event-details {
+            flex: 1;
+        }
+
+        .event-details h2 {
+            margin: 0 0 1rem;
+            color: #1e3c72;
+            font-size: 2rem;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .event-details h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #1e3c72, #2a5298);
+            border-radius: 2px;
+        }
+
+        .event-details p {
+            margin: 0.8rem 0;
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .event-date {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .event {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .event img {
+                width: 100%;
+                margin: 0 0 1rem 0;
+            }
+
+            .event-details h2::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <header>
+        <h1>Upcoming Events</h1>
+        <p>Stay updated with the latest events and opportunities</p>
+    </header>
+    <main>
+        <section class="event">
+            <img src="{{ url_for('static', filename='event1.jpg') }}" alt="Event 1">
+            <div class="event-details">
+                <h2>Career Fair 2023</h2>
+                <p>Date: March 15, 2023</p>
+                <p>Location: Downtown Convention Center</p>
+                <p>Join us for a day of networking and career opportunities with top companies.</p>
+            </div>
+        </section>
+        <section class="event">
+            <img src="{{ url_for('static', filename='event2.jpg') }}" alt="Event 2">
+            <div class="event-details">
+                <h2>Tech Conference</h2>
+                <p>Date: April 10, 2023</p>
+                <p>Location: Tech Park Auditorium</p>
+                <p>Explore the latest trends in technology and meet industry leaders.</p>
+            </div>
+        </section>
+        <section class="event">
+            <img src="{{ url_for('static', filename='event3.jpg') }}" alt="Event 3">
+            <div class="event-details">
+                <h2>Resume Workshop</h2>
+                <p>Date: May 5, 2023</p>
+                <p>Location: Online Webinar</p>
+                <p>Learn how to craft a standout resume with tips from HR professionals.</p>
+            </div>
+        </section>
+    </main>
+    {% include 'footer.html' %}
+</body>
+</html>

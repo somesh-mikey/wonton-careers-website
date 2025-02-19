@@ -1,0 +1,68 @@
+<style>
+  footer {
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      color: white !important;
+      padding: 3rem 0 2rem !important;
+      margin-top: 4rem !important;
+  }
+
+  footer .nav-link {
+      color: rgba(255,255,255,0.8) !important;
+      transition: all 0.3s ease;
+  }
+
+  footer .nav-link:hover {
+      color: white !important;
+      transform: translateY(-2px);
+  }
+
+  footer .border-bottom {
+      border-color: rgba(255,255,255,0.1) !important;
+  }
+
+  footer p {
+      color: rgba(255,255,255,0.8) !important;
+  }
+
+  .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+  }
+
+  .social-links a {
+      color: white;
+      background: rgba(255,255,255,0.1);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+  }
+
+  .social-links a:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-3px);
+  }
+</style>
+<footer class="mt-5">
+  <div class="container">
+      <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="/courses" class="nav-link">Courses</a></li>
+          <li class="nav-item"><a href="/events" class="nav-link">Events</a></li>
+          <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+      </ul>
+      <p class="text-center">&copy; 2024 Wonton, Inc</p>
+  </div>
+</footer>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
